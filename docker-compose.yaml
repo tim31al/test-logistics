@@ -1,0 +1,41 @@
+version: "3.1"
+
+services:
+#  db:
+#    image: mysql
+#    command: --default-authentication-plugin=mysql_native_password
+#    restart: always
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_USER: ${DB_USER}
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: ${DB_NAME}
+#    ports:
+#      - ${DB_PORT}:${DB_PORT}
+#    volumes:
+#      - ./data:/var/lib/mysql
+
+  webserver:
+    image: altimofeev/webserver-localhost
+    container_name: webserver
+    working_dir: ${WORKDIR}
+    ports:
+      - ${APP_PORT}:80
+    depends_on:
+      - app
+    volumes:
+      - .:${WORKDIR}
+      - sock_test:${SOCKET_DIR}
+
+  app:
+    image: altimofeev/php-fpm
+    container_name: app
+    env_file:
+      - .env
+    working_dir: ${WORKDIR}
+    volumes:
+      - .:${WORKDIR}
+      - sock_test:${SOCKET_DIR}
+
+volumes:
+  sock_test:
