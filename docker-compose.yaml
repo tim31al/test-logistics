@@ -1,20 +1,6 @@
 version: "3.1"
 
 services:
-#  db:
-#    image: mysql
-#    command: --default-authentication-plugin=mysql_native_password
-#    restart: always
-#    environment:
-#      MYSQL_ROOT_PASSWORD: root
-#      MYSQL_USER: ${DB_USER}
-#      MYSQL_PASSWORD: ${DB_PASSWORD}
-#      MYSQL_DATABASE: ${DB_NAME}
-#    ports:
-#      - ${DB_PORT}:${DB_PORT}
-#    volumes:
-#      - ./data:/var/lib/mysql
-
   webserver:
     image: altimofeev/webserver-localhost
     container_name: webserver
