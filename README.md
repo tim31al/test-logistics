@@ -2,7 +2,7 @@
 
 ## start 
 
-git clone ... my_dir
+git clone git@github.com:tim31al/test-logistics.git my_dir
 
 cd my_dir
 
