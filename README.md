@@ -18,13 +18,15 @@ docker-compose exec -u app app composer install
 
 composer install
 
-php -S
+cd public
+
+php -S localhost:8081
 
 
 ### routes
-POST /delivery/fast - быстрая доставка
+POST http://localhost:8081/delivery/fast - быстрая доставка
 
-POST /deliver/slow - медленная
+POST http://localhost:8081/deliver/slow - медленная
 
-POST /delivery/offer - результат
+POST http://localhost:8081/delivery/offer - результат
   в теле запроса любой оффер из списка
