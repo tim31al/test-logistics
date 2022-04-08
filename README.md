@@ -2,6 +2,10 @@
 
 ## start 
 
+git clone ... my_dir
+
+cd my_dir
+
 ### with docker-compose
 
 Установить нужный порт в .env (по умолчанию 8081)
@@ -11,8 +15,6 @@ docker-compose up -d
 docker-compose exec -u app app composer install
 
 ### without docker
-
-cd proj_id
 
 composer install
 
@@ -25,4 +27,4 @@ POST /delivery/fast - быстрая доставка
 POST /deliver/slow - медленная
 
 POST /delivery/offer - результат
-  в теле запроса любой оффер
+  в теле запроса любой оффер из списка
